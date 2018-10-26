@@ -22,9 +22,9 @@ namespace QL_ThuVien
                 sqlCon.Open();
 
             }
-            catch
+            catch(Exception e)
             {
-                MessageBox.Show("Ket noi khong thanh cong");
+                MessageBox.Show(e.Message);
             }
         }
         public static void closeConn()
@@ -45,11 +45,11 @@ namespace QL_ThuVien
                 SqlCommand sqlCommand = new SqlCommand(strSQL, sqlCon);
                 obj = sqlCommand.ExecuteNonQuery();
                 closeConn();
-                MessageBox.Show("Thành công.");
+                //MessageBox.Show("Thành công.");
             }
-            catch
+            catch (Exception e)
             {
-                MessageBox.Show("Yêu cầu của bạn không thể thực hiện được!");
+                MessageBox.Show(e.Message);
             }
             return obj;
         }
@@ -64,9 +64,9 @@ namespace QL_ThuVien
                 obj = sqlCommand.ExecuteScalar();
                 closeConn();
             }
-            catch
+            catch (Exception e)
             {
-                MessageBox.Show("Không thể lấy giá trị tương ứng!");
+                MessageBox.Show(e.Message);
             }
             return obj;
         }
@@ -80,11 +80,11 @@ namespace QL_ThuVien
                 SqlCommand sqlCommand = new SqlCommand(strSQL, sqlCon);
                 obj = sqlCommand.ExecuteReader();
                 closeConn();
-                MessageBox.Show("Thành công.");
+                //MessageBox.Show("Thành công.");
             }
-            catch
+            catch (Exception e)
             {
-                MessageBox.Show("Không thể thực thi được!");
+                MessageBox.Show(e.Message);
             }
             return obj;
         }
@@ -99,9 +99,9 @@ namespace QL_ThuVien
                 sqlDa.Fill(dt);
                 closeConn();
             }
-            catch
+            catch (Exception e)
             {
-                MessageBox.Show("Khong the do du lieu vao Database");
+                MessageBox.Show(e.Message);
             }
             return dt;
         }

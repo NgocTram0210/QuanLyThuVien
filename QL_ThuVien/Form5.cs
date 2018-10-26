@@ -31,6 +31,10 @@ namespace QL_ThuVien
         }
         private void Form5_Load(object sender, EventArgs e)
         {
+            if (DangNhap.boPhan != "BP2")
+            {
+                btNhap.Enabled = false;
+            }
             strSQL = @"select * from SACH";
             ds = new DataSet();
             ds = DataConnection.GetDataSet(strSQL);
@@ -118,7 +122,7 @@ namespace QL_ThuVien
                 bp = cbxNVNhan.SelectedValue.ToString();
                 d = dtNgaynhap.Value.ToString("yyyy/MM/dd");
 
-                strSQL = @"insert into SACH values ('" + cbxMaSach.Text + "','" + txtTen.Text + "','" + bc + "','" + txtTacgia.Text + "','" + txtNamXB.Text + "','" + txtNXB.Text + "','" + d + "','" + txtTrigia.Text + "','" + bp + "')";
+                strSQL = @"insert into SACH values ('" + cbxMaSach.Text + "',N'" + txtTen.Text + "','" + bc + "',N'" + txtTacgia.Text + "','" + txtNamXB.Text + "',N'" + txtNXB.Text + "','" + d + "','" + txtTrigia.Text + "','" + bp + "')";
                 t = DataConnection.RunsqlQuery(strSQL);
                 displayData();
             }
@@ -152,8 +156,8 @@ namespace QL_ThuVien
             l = cbxLoai.SelectedValue.ToString();
             nv = cbxNVNhan.SelectedValue.ToString();
 
-            strSQL = @"update Sach set TenSach='"+txtTen.Text+"', NamXB='"+txtNamXB.Text+ "', Loai='" +l + "', TacGia='" + txtTacgia.Text
-                + "', NhaXB='" + txtNXB.Text + "', NgayNhap='" + dtNgaynhap.Value.ToString("yyyy/MM/dd") + "', TriGia='" + txtTrigia.Text
+            strSQL = @"update Sach set TenSach=N'"+txtTen.Text+"', NamXB='"+txtNamXB.Text+ "', Loai='" +l + "', TacGia=N'" + txtTacgia.Text
+                + "', NhaXB=N'" + txtNXB.Text + "', NgayNhap='" + dtNgaynhap.Value.ToString("yyyy/MM/dd") + "', TriGia='" + txtTrigia.Text
                 + "', NVTiepNhan='" + nv +"' where MaSach='"+cbxMaSach.Text+"'";
             t = DataConnection.RunsqlQuery(strSQL);
             displayData();

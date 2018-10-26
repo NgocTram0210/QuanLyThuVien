@@ -127,7 +127,7 @@ namespace QL_ThuVien
                 d = dtNgaySinh.Value.ToString("yyyy/MM/dd");
                 dt = dtNgayLap.Value.ToString("yyyy/MM/dd");
 
-                strSQL = @"insert into DOCGIA values ('" + cbxMaDG.Text + "','" + txtHoten.Text + "','" + d + "','" + txtDiachi.Text + "','" + txtEmail.Text + "','" + bc + "','" + dt + "','" + bp + "')";
+                strSQL = @"insert into DOCGIA values ('" + cbxMaDG.Text + "',N'" + txtHoten.Text + "','" + d + "',N'" + txtDiachi.Text + "','" + txtEmail.Text + "','" + bc + "','" + dt + "','" + bp + "')";
                 t = DataConnection.RunsqlQuery(strSQL);
                 displayData();
             }
@@ -140,7 +140,7 @@ namespace QL_ThuVien
             nl = cbxLoai.SelectedValue.ToString() ;
             nv = cbxNVLap.SelectedValue.ToString();
 
-            strSQL = @"update DOCGIA set HoTen='"+ txtHoten.Text +"', NgaySinh='"+dtNgaySinh.Value.ToString("yyyy/MM/dd")+"', DiaChi='"
+            strSQL = @"update DOCGIA set HoTen=N'"+ txtHoten.Text +"', NgaySinh='"+dtNgaySinh.Value.ToString("yyyy/MM/dd")+"', DiaChi=N'"
                 +txtDiachi.Text+"', Email='"+txtEmail.Text+"', LoaiDG='"+nl+"', NgayLap='"+ dtNgayLap.Value.ToString("yyyy/MM/dd") 
                 + "', NVLap='"+nv+"' where MaDG='"+cbxMaDG.Text+"'";
             t = DataConnection.RunsqlQuery(strSQL);

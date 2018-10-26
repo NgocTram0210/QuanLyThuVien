@@ -69,6 +69,8 @@ namespace QL_ThuVien
             txtDiachi.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
             txtEmail.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
             txtDienthai.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+            txtAccount.Text = dgvNhanVien.CurrentRow.Cells[9].Value.ToString();
+            txtPass.Text = dgvNhanVien.CurrentRow.Cells[10].Value.ToString();
 
             strSQL = @"Select tenBC from BANGCAP where MaBC='" + dgvNhanVien.CurrentRow.Cells[6].Value.ToString() + "'";
             m = DataConnection.RunsqlScalar(strSQL);
@@ -117,7 +119,7 @@ namespace QL_ThuVien
                 cv = cbxChucvu.SelectedValue.ToString();
                 d = dtNgaySinh.Value.ToString("yyyy/MM/dd");
 
-                strSQL = @"insert into NHANVIEN values ('" + cbxMaNV.Text + "','" + txtHoten.Text + "','" + d + "','" + txtDiachi.Text + "','" + txtEmail.Text + "','" + txtDienthai.Text + "','" + bc + "','" + bp + "','" + cv + "')";
+                strSQL = @"insert into NHANVIEN values ('" + cbxMaNV.Text + "',N'" + txtHoten.Text + "','" + d + "',N'" + txtDiachi.Text + "','" + txtEmail.Text + "','" + txtDienthai.Text + "','" + bc + "','" + bp + "','" + cv + "','"+txtAccount.Text+"','"+txtPass.Text+"')";
                 t = DataConnection.RunsqlQuery(strSQL);
                 displayData();
             }
@@ -130,9 +132,9 @@ namespace QL_ThuVien
             bc = cbxBangcap.SelectedValue.ToString();
             cv = cbxChucvu.SelectedValue.ToString();
 
-            strSQL = @"update NHANVIEN set HoTen='" +txtHoten.Text+ "',NgaSinh='" +dtNgaySinh.Value.ToString("yyyy/MM/dd") + "',DiaChi='" 
+            strSQL = @"update NHANVIEN set HoTen=N'" +txtHoten.Text+ "',NgaySinh='" +dtNgaySinh.Value.ToString("yyyy/MM/dd") + "',DiaChi=N'" 
                 +txtDiachi.Text +"',DienThoai='" + txtDienthai.Text + "',Email='" + txtEmail.Text + "',BoPhan='" + bp + "',ChucVu='" + cv
-                + "',BangCap='" + bc + "' where MaNV='"+cbxMaNV.Text+"'";
+                + "',BangCap='" + bc + "',Account='"+txtAccount.Text+"', Pass='"+txtPass.Text+"' where MaNV='"+cbxMaNV.Text+"'";
 
             t = DataConnection.RunsqlQuery(strSQL);
             displayData();

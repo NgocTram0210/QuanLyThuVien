@@ -52,15 +52,19 @@
             this.cbxBangcap = new System.Windows.Forms.ComboBox();
             this.cbxMaNV = new System.Windows.Forms.ComboBox();
             this.btSua = new System.Windows.Forms.Button();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtAccount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvNhanVien
             // 
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien.Location = new System.Drawing.Point(32, 176);
+            this.dgvNhanVien.Location = new System.Drawing.Point(32, 212);
             this.dgvNhanVien.Name = "dgvNhanVien";
-            this.dgvNhanVien.Size = new System.Drawing.Size(766, 150);
+            this.dgvNhanVien.Size = new System.Drawing.Size(766, 114);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvNhanVien_MouseClick);
             // 
@@ -275,11 +279,49 @@
             this.btSua.UseVisualStyleBackColor = true;
             this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(486, 178);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(146, 20);
+            this.txtPass.TabIndex = 33;
+            // 
+            // txtAccount
+            // 
+            this.txtAccount.Location = new System.Drawing.Point(232, 178);
+            this.txtAccount.Name = "txtAccount";
+            this.txtAccount.Size = new System.Drawing.Size(137, 20);
+            this.txtAccount.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(391, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 19);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Password:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(142, 178);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 19);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Account:";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 392);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtAccount);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.cbxMaNV);
             this.Controls.Add(this.cbxBangcap);
@@ -339,5 +381,9 @@
         private System.Windows.Forms.ComboBox cbxBangcap;
         private System.Windows.Forms.ComboBox cbxMaNV;
         private System.Windows.Forms.Button btSua;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtAccount;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label12;
     }
 }
